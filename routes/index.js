@@ -192,13 +192,14 @@ exports.recommend = function (req,res) {
                 };
             }
             if(last===1){
-                tracks.sort(function(a,b){
-                    return b.count - a.count;
-                });
-                //console.log(tracks);
-                var rand = Math.floor((Math.random()*6)+1);
-                doc.songs.push({title:tracks[rand].track.name,artist:tracks[rand].track.artist.name})
-                doc.save();
+                if(tracks.length>0){
+                    tracks.sort(function(a,b){
+                        return b.count - a.count;
+                    });
+                    var rand = Math.floor((Math.random()*6)+1);
+                    doc.songs.push({title:tracks[rand].track.name,artist:tracks[rand].track.artist.name})
+                    doc.save();
+                }
                 res.render('_playlistbody',{playlist:doc})
                 return false;
             }
