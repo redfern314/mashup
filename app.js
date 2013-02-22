@@ -14,7 +14,6 @@ mongoose.connect((process.env.MONGOLAB_URI||'mongodb://localhost/mashup'));
 
 var models = require('./models/models.js')
   , index = require('./routes/index');
-  //, feed = require('./routes/feed');
 
 var facebook_obj;
 
@@ -46,10 +45,6 @@ app.post('/edit', index.edit);
 app.get('/addlist', index.loggedIn, index.addList);
 app.get('/friends/:id', index.loggedIn, index.friends);;
 app.post('/recommend', index.recommend);
-//app.get('/admin', Facebook.loginRequired(scope), index.loggedIn, index.admin);
-//app.post('/admin', Facebook.loginRequired(scope), index.loggedIn, index.admin_post);
-//app.get('/feed', Facebook.loginRequired(scope), index.loggedIn, feed.feed);
-//app.post('/feed', Facebook.loginRequired(scope), index.loggedIn, feed.feed_post);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

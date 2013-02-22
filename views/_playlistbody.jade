@@ -1,10 +1,14 @@
 for song in playlist.songs
   div(id='#{song._id}$#{playlist._id}')
     div.container.song.inline
-      | Title: #{song.title}
+      | Title: 
+      span.bold
+        | #{song.title}
       br
-      | Artist: #{song.artist}
-    div.inline.right
+      | Artist: 
+      span.bold
+        | #{song.artist}
+    div.inline.right.deldiv
       img.remove(src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png')
     br
 img.add(src='http://cdn1.iconfinder.com/data/icons/splashyIcons/add.png')

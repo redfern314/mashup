@@ -8,7 +8,8 @@ block content
   div#content
       div.center.container.addfriend(id=id)
         for friend in friends
-            div.divleft.center.inline(id=friend.name)
-                img.select(src='http://cdn1.iconfinder.com/data/icons/splashyIcons/add.png',id=friend.id)
-            div.divright.center.inline
-                | #{friend.name}
+            div.container.friend
+                div.divleft.center.inline(id=friend.name)
+                    img.select(src='http://cdn1.iconfinder.com/data/icons/splashyIcons/add.png',id=friend.id)
+                div.divright.center.inline
+                    | #{friend.name}
