@@ -239,7 +239,7 @@ exports.recommend = function (req,res) {
             }
             counter += 1;
         };
-        intervalId=setInterval(runQuery,100);
+        intervalId=setInterval(runQuery,50);
     });
 }
 

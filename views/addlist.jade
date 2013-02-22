@@ -8,15 +8,15 @@ block content
   div#content
       div.center.container#addlist
         form(method='post',action='',id='newlist')
-            | Playlist Title:
-            input(name='title')
+            div.container.entry
+                | Playlist Title:
+                input(name='title')
             br
-            br
-            | Title
-            input(name='songtitle')
-            br
-            | Artist
-            input(name='artist')
-            br
+            div.container.entry
+                | Song Title:
+                input(name='songtitle')
+            div.container.entry
+                | Song Artist:
+                input(name='artist')
             button#save
                 | Save List

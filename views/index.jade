@@ -12,47 +12,57 @@ block content
           - i = i + 1;
           if row.length == 3
             div.container.center.inline.listheader.leftcolumn(id='#{row.playlists[0]._id}head')
-              | Playlist Title: #{row.playlists[0].title}
-              br
-              img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
-              img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
-              img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[0]._id}')
-              br
-              | Shared with: Me
-              for user in row.playlists[0].users
-                if user != myName
-                  | , #{user}
+              h2 #{row.playlists[0].title}
+              div.icons
+                img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
+                img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
+                img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[0]._id}')
+              p.alttext
+                br
+              div.container.shared
+                | Shared with: Me
+                for user in row.playlists[0].users
+                  if user != myName
+                    | , #{user}
             div.container.center.inline.listheader.centercolumn(id='#{row.playlists[1]._id}head')
-              | Playlist Title: #{row.playlists[1].title}
-              br
-              img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
-              img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
-              img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[1]._id}')
-              br
-              | Shared with: Me
-              for user in row.playlists[1].users
-                if user != myName
-                  | , #{user}
+              h2 #{row.playlists[1].title}
+              div.icons
+                img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
+                img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
+                img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[1]._id}')
+              p.alttext
+                br
+              div.container.shared
+                | Shared with: Me
+                for user in row.playlists[1].users
+                  if user != myName
+                    | , #{user}
             div.container.center.inline.listheader.rightcolumn(id='#{row.playlists[2]._id}head')
-              | Playlist Title: #{row.playlists[2].title}
-              br
-              img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
-              img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
-              img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[2]._id}')
-              br
-              | Shared with: Me
-              for user in row.playlists[2].users
-                if user != myName
-                  | , #{user}
+              h2 #{row.playlists[2].title}
+              div
+                img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
+                img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
+                img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[2]._id}')
+              p.alttext
+                br
+              div.container.shared
+                | Shared with: Me
+                for user in row.playlists[2].users
+                  if user != myName
+                    | , #{user}
             br
             div.container.center.inline.listbody.leftcolumn(id='#{row.playlists[0]._id}body')
               for song in row.playlists[0].songs
                 div(id='#{song._id}$#{row.playlists[0]._id}')
                   div.container.song.inline
-                    | Title: #{song.title}
+                    | Title: 
+                    span.bold
+                      | #{song.title}
                     br
-                    | Artist: #{song.artist}
-                  div.inline.right
+                    | Artist: 
+                    span.bold
+                      | #{song.artist}
+                  div.inline.right.deldiv
                     img.remove(src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png')
                   br
               img.add(alt='Add Song',src='http://cdn1.iconfinder.com/data/icons/splashyIcons/add.png')
@@ -60,10 +70,14 @@ block content
               for song in row.playlists[1].songs
                 div(id='#{song._id}$#{row.playlists[1]._id}')
                   div.container.song.inline
-                    | Title: #{song.title}
+                    | Title: 
+                    span.bold
+                      | #{song.title}
                     br
-                    | Artist: #{song.artist}
-                  div.inline.right
+                    | Artist: 
+                    span.bold
+                      | #{song.artist}
+                  div.inline.right.deldiv
                     img.remove(src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png')
                   br
               img.add(alt='Add Song',src='http://cdn1.iconfinder.com/data/icons/splashyIcons/add.png')
@@ -71,45 +85,57 @@ block content
               for song in row.playlists[2].songs
                 div(id='#{song._id}$#{row.playlists[2]._id}')
                   div.container.song.inline
-                    | Title: #{song.title}
+                    | Title: 
+                    span.bold
+                      | #{song.title}
                     br
-                    | Artist: #{song.artist}
-                  div.inline.right
+                    | Artist: 
+                    span.bold
+                      | #{song.artist}
+                  div.inline.right.deldiv
                     img.remove(src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png')
                   br
               img.add(alt='Add Song',src='http://cdn1.iconfinder.com/data/icons/splashyIcons/add.png')
           else if row.length == 2
             div.container.center.inline.listheader.leftcolumn(id='#{row.playlists[0]._id}head')
-              | Playlist Title: #{row.playlists[0].title}
-              br
-              img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
-              img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
-              img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[0]._id}')
-              br
-              | Shared with: Me
-              for user in row.playlists[0].users
-                if user != myName
-                  | , #{user}
+              h2 #{row.playlists[0].title}
+              div.icons
+                img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
+                img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
+                img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[0]._id}')
+              p.alttext
+                br
+              div.container.shared
+                | Shared with: Me
+                for user in row.playlists[0].users
+                  if user != myName
+                    | , #{user}
             div.container.center.inline.listheader.rightcolumn(id='#{row.playlists[1]._id}head')
-              | Playlist Title: #{row.playlists[1].title}
-              br
-              img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
-              img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
-              img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[1]._id}')
-              br
-              | Shared with: Me
-              for user in row.playlists[1].users
-                if user != myName
-                  | , #{user}
+              h2 #{row.playlists[1].title}
+              div.icons
+                img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
+                img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
+                img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[1]._id}')
+              p.alttext
+                br
+              div.container.shared
+                | Shared with: Me
+                for user in row.playlists[1].users
+                  if user != myName
+                    | , #{user}
             br
             div.container.center.inline.listbody.leftcolumn(id='#{row.playlists[0]._id}body')
               for song in row.playlists[0].songs
                 div(id='#{song._id}$#{row.playlists[0]._id}')
                   div.container.song.inline
-                    | Title: #{song.title}
+                    | Title: 
+                    span.bold
+                      | #{song.title}
                     br
-                    | Artist: #{song.artist}
-                  div.inline.right
+                    | Artist: 
+                    span.bold
+                      | #{song.artist}
+                  div.inline.right.deldiv
                     img.remove(src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png')
                   br
               img.add(alt='Add Song',src='http://cdn1.iconfinder.com/data/icons/splashyIcons/add.png')
@@ -117,34 +143,44 @@ block content
               for song in row.playlists[1].songs
                 div(id='#{song._id}$#{row.playlists[1]._id}')
                   div.container.song.inline
-                    | Title: #{song.title}
+                    | Title: 
+                    span.bold
+                      | #{song.title}
                     br
-                    | Artist: #{song.artist}
-                  div.inline.right
+                    | Artist: 
+                    span.bold
+                      | #{song.artist}
+                  div.inline.right.deldiv
                     img.remove(src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png')
                   br
               img.add(alt='Add Song',src='http://cdn1.iconfinder.com/data/icons/splashyIcons/add.png')
           else if row.length == 1
             div.container.center.inline.listheader.centercolumn(id='#{row.playlists[0]._id}head')
-              | Playlist Title: #{row.playlists[0].title}
-              br
-              img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
-              img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
-              img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[0]._id}')
-              br
-              | Shared with: Me
-              for user in row.playlists[0].users
-                if user != myName
-                  | , #{user}
+              h2 #{row.playlists[0].title}
+              div.icons
+                img.inline.icon.recommend(alt='Get Recommendations',src='http://tsep.info/docs/TSEP.html_files/icons/idea.png')
+                img.inline.icon.share(alt='Share List',src='http://www.dc.gov/staticfiles/img/share-icon-16x16.png')
+                img.inline.icon.removeList(alt='Remove List',src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png',id='#{row.playlists[0]._id}')
+              p.alttext
+                br
+              div.container.shared
+                | Shared with: Me
+                for user in row.playlists[0].users
+                  if user != myName
+                    | , #{user}
             br
             div.container.center.inline.listbody.centercolumn(id='#{row.playlists[0]._id}body')
               for song in row.playlists[0].songs
                 div(id='#{song._id}$#{row.playlists[0]._id}')
                   div.container.song.inline
-                    | Title: #{song.title}
+                    | Title: 
+                    span.bold
+                      | #{song.title}
                     br
-                    | Artist: #{song.artist}
-                  div.inline.right
+                    | Artist: 
+                    span.bold
+                      | #{song.artist}
+                  div.inline.right.deldiv
                     img.remove(src='http://icons.iconarchive.com/icons/custom-icon-design/office/16/delete-icon.png')
                   br
               img.add(alt='Add Song',src='http://cdn1.iconfinder.com/data/icons/splashyIcons/add.png')
