@@ -1,0 +1,14 @@
+extends layout
+
+block scripts
+  script(type="text/javascript", src='/javascripts/friends.js')
+
+block content
+  include _titlebar
+  div#content
+      div.center.container.addfriend(id=id)
+        for friend in friends
+            div.divleft.center.inline(id=friend.name)
+                img.select(src='http://cdn1.iconfinder.com/data/icons/splashyIcons/add.png',id=friend.id)
+            div.divright.center.inline
+                | #{friend.name}

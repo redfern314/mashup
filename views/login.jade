@@ -1,0 +1,16 @@
+extends layout
+
+block style
+  link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='http://code.jquery.com/jquery.js')
+
+block content
+  div.center#titlebar
+    div.center#titlewrap
+        h1.title.inline List
+          span#pop Pop
+
+  div#content
+      div.container.center#fblogin
+          a(href='/login')
+              img(src='http://www.tweekly.fm/media/image/login-facebook.png')

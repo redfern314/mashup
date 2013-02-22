@@ -1,0 +1,178 @@
+body {
+  padding-left: 50px;
+  padding-right: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #444444;
+}
+
+div.container {
+    background-color: #A6A6A6;
+    border-style:solid;
+    border-width:1px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+a.dark {
+    color: #0000A3;
+}
+
+.vmid {
+    vertical-align:middle;
+}
+
+div#titlebar {
+    background-color: #029229;
+    position: fixed;
+    width: 100%;
+    height: 35px;
+    top:0px;
+    left: 0px;
+    z-index:1;
+}
+
+div#titlewrap {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span#pop {
+    color: #FF0000;
+}
+
+div#feed {
+    width:1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#addlist {
+    width:400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.addfriend {
+    width:400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.icon {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+div.leftcolumn {
+    width:300px;
+    margin-left: auto;
+    margin-right: 75px;
+}
+
+div.centercolumn {
+    width:300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.rightcolumn {
+    width:300px;
+    margin-left: 75px;
+    margin-right: auto;
+}
+
+div.divright {
+    width: 80%;
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+div.divleft {
+    width: 20%;
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+div.listheader {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    vertical-align: bottom;
+}
+
+div.listbody {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-top-style: none;
+    vertical-align: top;
+}
+
+div.song {
+    margin-bottom: 10px;
+    width: 80%;
+}
+
+div.center {
+    text-align: center;
+}
+
+div.right {
+    text-align: right;
+}
+
+div.left {
+    text-align: left;
+}
+
+
+div#content {
+    position: relative;
+    top: 50px;
+}
+
+.title {
+    color:#ffffff;
+    margin: 0;
+}
+
+p.title {
+    padding-left: 50px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+div#composeinput {
+    text-align: right;
+    width: 70%;
+    vertical-align: middle;
+}
+
+.nomargin {
+    margin: 0px;
+}
+
+img.fbimg {
+    max-width: 550px;
+    max-height: 475px;
+}
+
+div#fblogin {
+    width:400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1.title {
+    text-align: left;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+a {
+  color: #00B7FF;
+}

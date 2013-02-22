@@ -1,0 +1,47 @@
+extends layout
+
+block style
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  script(type="text/javascript", src="/javascripts/widget/lib/jquery-1.7.1.min.js")
+  script(type="text/javascript", src="/javascripts/widget/lib/jquery.ui.core.min.js")
+  script(type="text/javascript", src="/javascripts/widget/lib/jquery.ui.widget.min.js")
+  script(type="text/javascript", src="/javascripts/widget/lib/jquery.ui.rcarousel.min.js")
+  link(type="text/css", rel="stylesheet", href="/javascripts/widget/css/rcarousel.css")
+
+block content
+  div#titlebar
+      div.center
+          a(href='/logout')
+              p.inline.title(style='font-size: #{textsize};color: #{textcolor};') Logout
+          a(href='/feed')
+              h1.title.inline StalkerCentral
+          a(href='/admin')
+              p.inline.title(style='font-size: #{textsize};color: #{textcolor};') Settings 
+  div#content
+      div#feed 
+        div.container.center.block#user
+            div#propic
+                img(src=propic)
+        div.container.block.center#carouselcontainer
+          div.center#carouselwrapper
+            div.inline#prevbutton
+              a.dark(href="#", id="ui-carousel-prev")
+                img(src='http://sadiakomal.com/wp-content/uploads/2011/03/arrow_button_left.png', width='50px')
+            div.center.inline#carousel
+              each friend in friends
+                if(friend.photos)
+                  each photo in friend.photos.data
+                    div.center
+                      p Uploaded by #{friend.name}
+                      p Caption: #{photo.name}
+                      img.fbimg(src=photo.source)
+                      br
+                      div
+                        textarea.inline.vmid(rows='1',id='input#{photo.id}')
+                        button.inline.vmid.submitbutton(id=photo.id)
+                          | Post Comment
+            div.inline#nextbutton
+              a.dark(href="#", id="ui-carousel-next")
+                img(src='http://sadiakomal.com/wp-content/uploads/2011/03/arrow_button_right.png', width='50px')
+
+  script(src="/javascripts/feed.js")

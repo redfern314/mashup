@@ -1,0 +1,22 @@
+extends layout
+
+block scripts
+  script(type="text/javascript", src='/javascripts/addlist.js')
+
+block content
+  include _titlebar
+  div#content
+      div.center.container#addlist
+        form(method='post',action='',id='newlist')
+            | Playlist Title:
+            input(name='title')
+            br
+            br
+            | Title
+            input(name='songtitle')
+            br
+            | Artist
+            input(name='artist')
+            br
+            button#save
+                | Save List

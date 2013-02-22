@@ -1,0 +1,34 @@
+extends layout
+
+block script
+  script(src='/javascripts/admin.js')
+
+block content
+  include _titlebar
+  div#titlebar
+      div.center
+          a(href='/logout')
+              p.inline.title Logout
+          a(href='/feed')
+              h1.title.inline StalkerCentral
+          a(href='/admin')
+              p.inline.title Settings
+
+  div#content
+      h1= title        
+
+      div#feed
+          div.container.center
+              form(method='post',action='',id='adminform')
+                  div.block
+                      p.inline Set Font Size:  
+                      input(name='textsize',id='textsize')
+                  div.block
+                      p.inline Set Background Color: #  
+                      input(name='bgcolor',id='bgcolor')
+                  div.block
+                      p.inline Set Text Color: #  
+                      input(name='textcolor',id='textcolor')
+                  div.block
+                      button
+                          | Apply
